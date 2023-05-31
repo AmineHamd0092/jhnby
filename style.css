@@ -1,0 +1,135 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Global Styles */
+  body {
+    background-image: url("surfing-2212948_1920.jpg") ;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  header:hover {
+    background-color: black;
+    opacity: 0.7;
+    padding: 20px;
+  }
+  
+  nav ul {
+    list-style: none;
+    text-align: center;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  nav ul li.active a {
+    color: #f7d366;
+    font-weight: bold;
+  }
+  
+  #hero {
+    background-image: url("beach.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-text {
+    text-align: center;
+    color: #fff;
+  }
+  
+  .hero-text h1 {
+    color:darkgrey;
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  .hero-text p {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f7d366;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  section {
+    position:sticky;
+    margin-left: 100px; 
+    
+    padding: 60px;
+    text-align: left;
+  }
+  
+  section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  footer {
+    background-color: #333;
+    margin-top:184px;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+  }
+  .slider {
+  
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    
+  }
+  
+  .slides {
+    background-image:url("pexels-adrien-olichon-2387793.jpg");
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .slides img {
+    
+    margin-left: auto;
+    margin-right:auto;
+    width: 50%;
+   
+  }
+  .prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  background-color: #f7d366;
+  color: #333;
+  border: none;
+  cursor: pointer;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}

@@ -1,0 +1,132 @@
+<html>
+	<head>
+		<title> Moroccan Architecture</title>
+		<script type="text/javascript">
+		// Tableau des objets images
+		var tabl=[
+					{ 
+					image : 'images/image1.jpeg',
+					name : "Palais Bahia",
+					ville :'Marrakech',
+					date : 'XII Se'
+					},
+					{ 
+					image : 'images/image2.jpeg',
+					name: 'Palais priv ',
+					ville :'Marrakech',
+					date : 'XX Se'
+					},
+					{ 
+					image : 'images/image3.jpeg',
+					name :'Residence priv e',
+					ville :'Fes',
+					date : 'XXI se'
+					},
+					{ 
+					image : 'images/image4.jpeg',
+					name : 'Medrassa Benyoussef',
+					ville :'Marrakech',
+					date : 'XXI Se'
+					},
+					{ 
+					image : 'images/image8.jpeg',
+					name : 'Jardin Majorelle',
+					ville :'Marrakech',
+					date : 'XX Se'
+					}
+		];
+		// Indice de l'image courante
+		var i=0;
+		// Timer de la fonction setInterval
+		var interval=null;
+		//Fonction pour afficher la premi re image
+		function premier(){
+			// acc der   l'objet DOM ayant l'id 'ecran' et modifier sa propri te src 
+			document.getElementById('ecran').src=tabl[0].image;
+			let content = "<li>"+tabl[0].name+"</li><li>"+tabl[0].ville+"</li><li>"+ tabl[0].date+"</li>";
+			// acc der   l'objet DOM ayant l'id 'comment' et modifier sa propri te innerHTML (contenu html)
+			document.getElementById('comment').innerHTML= content;
+			
+		}
+		//Fonction pour afficher la derni re image
+		function dernier(){
+			document.getElementById('ecran').src=tabl[tabl.length-1].image;
+			let content = "<li>"+tabl[tabl.length-1].name+"</li><li>"+tabl[tabl.length-1].ville+"</li><li>"+ tabl[tabl.length-1].date+"</li>";
+			document.getElementById('comment').innerHTML= content;
+		}
+		//Fonction pour afficher l'image suivante
+		function suivant(){
+			i++;
+			if(i>5){
+				i=0;
+			}
+			document.getElementById('ecran').src=tabl[i].image;
+			let content = "<li>"+tabl[i].name+"</li><li>"+tabl[i].ville+"</li><li>"+ tabl[i].date+"</li>";
+			document.getElementById('comment').innerHTML= content;
+		}
+		//Fonction pour afficher l'image pr c dent
+		function precedent(){
+			i--;
+			if(i<0){
+			i=tabl.length-1;
+			}
+			document.getElementById('ecran').src=tabl[i].image;
+			let content = "<li>"+tabl[i].name+"</li><li>"+tabl[i].ville+"</li><li>"+ tabl[i].date+"</li>";
+			document.getElementById('comment').innerHTML= content;
+		}
+		//Fonction pour la l'affichage automatique des images
+		function lecture(){
+			interval = setInterval(suivant,500);
+		}
+		//Fonction pour arr ter l'affichage automatique des images
+		function arret(){
+			clearInterval(interval);
+		}
+		</script>
+		<style type="text/css">
+			.container{
+				display:flex;
+				justify-content:center;
+				align-items:center;
+				flex-direction:column;
+				gap:20px;
+				position:relative;
+			}
+			.container img{
+				width:800px;
+				height:600px;
+				
+			}
+			#comment{
+				position:absolute;
+				width:400px;
+				height:150px;
+				background-color:rgba(0,100,255,.5);
+				border-radius:18px;
+				padding:20px;
+				top:10px;
+				left:350px;
+				color:#fff;
+				font-size:2em;
+				font-weight:bold;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<img src="images/image1.jpeg" id="ecran">
+			<div id="comment">
+				<!--> on affiche les infos des images ici </!-->
+			</div>
+			<nav>
+				<button onclick="premier()">Premier</button>
+				<button onclick="suivant()">Suivant</button>
+				<button onclick="lecture()">Lecture</button>
+				<button onclick="arret()">Arr t</button>
+				<button onclick="precedent()">Pr c dent</button>
+				<button onclick="dernier()">Dernier</button>
+			</nav>
+	    </div>
+	</body>
+</html>
